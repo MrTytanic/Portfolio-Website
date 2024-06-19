@@ -1,19 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body { 
     background-color: rgb(2, 15, 29);
     margin: 0;
 }
 
-.kanit-light {
-    font-family: "Kanit", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+.header {
+    z-index: 1;
+    background: linear-gradient(-45deg, black, rgb(2, 2, 43), rgb(21, 21, 21));
+    background-size: 400% 400%;
+    width: 100%;
+    height: 80vh;
+    animation: animate 15s ease infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(2, 15, 29);
+    z-index: 1000;
+    transition: top 0.3s;
 }
 
 .navbar ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    background-color: rgb(14, 21, 105);
+    display: flex;
+    justify-content: left;
 }
 
 .navbar ul li {
@@ -29,8 +60,8 @@ body {
 }
 
 .navbar ul li a:hover {
-    background-color: rgb(25, 39, 200); /* Change background color on hover */
-    color: yellow; /* Change text color on hover */
+    background-color: rgb(25, 39, 200);
+    color: yellow;
 }
 
 .navbar ul li ul {
@@ -43,6 +74,7 @@ body {
     margin: 0;
     list-style: none;
 }
+
 .navbar ul li:hover ul {
     display: block;
 }
@@ -56,23 +88,28 @@ body {
 }
 
 .navbar ul li ul li a:hover {
-    background-color: rgb(25, 39, 200); /* Change background color on hover for dropdown items */
-    color: yellow; /* Change text color on hover for dropdown items */
+    background-color: rgb(25, 39, 200);
+    color: yellow;
+}
+
+.image-1 {
+    border-radius: 50%;
+    border: 15px solid #ffffff;
+    position: absolute; left: 200px; top: 200px;
 }
 
 h1 {
-    font-family: "Kanit", sans-serif;
     font-weight: 300;
     font-style: normal;
+    color: white;
     text-align: center;
 }
 
 p {
-    font-family: "Kanit", sans-serif;
     font-weight: 300;
     font-style: normal;
-
-    border-style:outset;
+    color: white;
+    border-style: outset;
     border-width: 5px;
     border-color: rgb(140, 145, 200);
     border-radius: 10px;
@@ -81,9 +118,9 @@ p {
 }
 
 h3 {
-    font-family: "Kanit", sans-serif;
     font-weight: 300;
     font-style: normal;
+    color: white;
     text-align: right;
     margin: 15px;
 }
