@@ -92,12 +92,65 @@ body {
     color: yellow;
 }
 
+.custom-heading {
+    position: absolute;
+    top: 40%;
+    left: 10%; /* Adjust the left position as needed */
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    text-align: left;
+    font-size: 6em;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid white; /* Add a cursor */
+    animation: typing 6s steps(15, end);
+    /* Run typing animation for 6 seconds */
+}
+
+/* typing effect */
+@keyframes typing {
+    0% { width: 0 }
+    100% { width: 100% }
+}
+
+/* cursor blinking */
+.custom-heading::after {
+    content: '';
+    display: inline-block;
+    width: 10px; /* Adjust the width of the cursor */
+    height: 100%;
+    border-right: .15em solid white; /* Cursor */
+    animation: cursor .4s step-end infinite alternate;
+    /* Blink cursor indefinitely */
+    vertical-align: text-bottom; /* Align cursor properly */
+}
+
+@keyframes cursor {
+    0%, 100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}
+
 .image-1 {
     border-radius: 50%;
     border: 15px solid #ffffff;
     position: absolute; left: 200px; top: 200px;
 }
 
+.about {
+    background-color: rgb(20, 30, 45);
+}
+
+.contact {
+    background-color: rgb(10, 20, 35);
+}
+
+#documentfooter {
+    background-color: rgb(0, 0, 0);
+}
 h1 {
     font-weight: 300;
     font-style: normal;
